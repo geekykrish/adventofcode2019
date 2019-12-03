@@ -1,18 +1,17 @@
+package aoc2019
+
 import java.io.File
-import java.util.*
 
 fun main(args: Array<String>) {
-
-    val read = Scanner(System.`in`)
-    val stream = File("/Users/goku/personal/adventofcode2019/src/day1_1.txt").bufferedReader()
+    val file = File(ClassLoader.getSystemResource("day1_1.txt").file).bufferedReader()
      var sum = 0
-    stream.readLines().forEach {
+    file.readLines().forEach {
         var temp = it.toInt()
         while(temp > 6){
             temp = temp.div(3)-2
             sum += temp
         }
     }
-    stream.close()
+    file.close()
     print(sum)
 }
